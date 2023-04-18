@@ -5,16 +5,29 @@ export default defineOperationApp({
 	name: 'Google Cloud Pub/Sub',
 	icon: 'publish',
 	description: 'Publish message on a Pub/Sub topic.',
-	overview: ({ text }) => [
+	overview: ({ text, message }) => [
 		{
-			label: 'Text',
+			label: 'Topic',
 			text: text,
+		},
+		{
+			label: 'Message',
+			text: message,
 		},
 	],
 	options: [
 		{
-			field: 'text',
-			name: 'Text',
+			field: 'topic',
+			name: 'Topic',
+			type: 'string',
+			meta: {
+				width: 'full',
+				interface: 'input',
+			},
+		},
+		{
+			field: 'message',
+			name: 'Message',
 			type: 'string',
 			meta: {
 				width: 'full',
